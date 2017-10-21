@@ -79,7 +79,7 @@ More training data were added to increase the training accuracy. There were diff
 2. Trying out more different combinations of encoding/decoding layer. I have tried by increasing one layer, but this seems to increase my training time significantly (AWS is not cooperating sometimes), sometimes by 10 times. 
 3. It may also be good to explore other techniques explained in the lecture such as dropout and pooling. 
 4. It would be good to be able to try out much bigger epochs, i.e. 50 - 100 and see whether overall the data becomes overfitted or there might be a sweet spot. However the training time is too long for this cases.
-
+5. Fix up the simulator to be able to run the follow me project with the model trained.
 
 ## Scenarios
 
