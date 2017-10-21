@@ -6,30 +6,39 @@ This project is on deep learning. In this project, a neural network is trained t
 ![alt text][image_0] 
 
 
-
-
 ### Walkthrough
+The model structure used is a 5 layer full convolutional network model. It has 2 encoders, 1x1 convolution layer and 2 decoders.
 
+![model](./images/FCN_model.png)
 
 #### Encoder
-
+Separable convolution is used for the encoders. Separable convolutions is a technique that reduces the number of parameters needed, thus increasing efficiency for the encoder network. It requires less parameters, making it more efficient and reducing runtime performance.
+The first encoder outputs a depth of 32 from 3, and the second encoder outputs a depth of 64.
 
 #### 1x1 Convolution layer
-
+The 1x1 convolution has a kernel size of 1 and stride of 1. It outputs a depth of 128.
 
 #### Decoder
+The decoder bilinear sampling, where it takes the input and first layer as inputs to be fed into to do upsampling. The decoder will upsample and concatenate (refer to image above), followed by passing through 2 separable convolution layers.
+
 
 ### Training and validation data
-More training data were added to increase the training accuracy
+More training data were added to increase the training accuracy. There were different scenarions taken into account:
+1. Hero in a dense area, where there are other people and can be mistaken for the hero
+2. Different angles of the hero, the hero would be zigzagging
+3. Some overlapping between the patrol area and hero walking area
 
+![model](./images/training_zigzag.png)
+
+
+![model](./images/training_random.png)
 
 ### Pitfalls
 Convolution layer is determined by kernel size. 1x1 convolution layer would require a kernel size of 1.
 Number of output is determined by both kernel_size and strides. For a kernel_size 3x3 means these 9 numbers in inputs, multiplied by w1, we can get 1 value. If the kernel_size is 5x5, one value of output would be calculated with 25 values from input.
 
+## Future enhancements
 
-
-[Video] (https://youtu.be/haTRSOkH3rI)
 
 
 ## Scenarios
