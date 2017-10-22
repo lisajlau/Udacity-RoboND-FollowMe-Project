@@ -5,6 +5,24 @@ This project is on deep learning. In this project, a neural network is trained t
 [image_0]: ./docs/misc/sim_screenshot.png
 ![alt text][image_0] 
 
+Video: [Video](https://youtu.be/Aws5YRif7us)
+
+Notebook: [Jupyter notebook](./model_training.html)
+	learning_rate = 0.005
+	batch_size = 40
+	num_epochs = 20
+	steps_per_epoch = 100
+	validation_steps = 50
+	workers = 2
+
+Notebook2: [Jupyter notebook](./model_training2.html)
+	learning_rate = 0.005
+	batch_size = 50
+	num_epochs = 300
+	steps_per_epoch = 100
+	validation_steps = 50
+	workers = 2
+	
 
 ## Network Architecture
 The model structure used is a 5 layer fully convolutional network model. It has 2 encoders, 1x1 convolution layer and 2 decoders. A fully convolutional model is used instead of a fully connected layer as fully connected layer does not retain any spatial information. As explained in the lectures, while doing convolution they preserve spatial information throughout the entire network. 
@@ -40,13 +58,13 @@ The following hyperparameters are used.
 	learning_rate = 0.005
 	batch_size = 40
 	num_epochs = 20
-	steps_per_epoch = 80
+	steps_per_epoch = 100
 	validation_steps = 50
 	workers = 2
 
 There were chosen via trial and errors. The different scenarios outlining the different hyperparameters are shown at the end of this document, with the relevant scores.
 
-The final score with this parameters with the network model above is 0.4647, where the final score is based of this equation: average_IoU*(n_true_positive/(n_true_positive+n_false_positive+n_false_negative)).
+The final score with this parameters with the network model above is 0.435272737349, where the final score is based of this equation: average_IoU*(n_true_positive/(n_true_positive+n_false_positive+n_false_negative)).
 
 ### Learning rate
 
@@ -79,7 +97,7 @@ More training data were added to increase the training accuracy. There were diff
 2. Trying out more different combinations of encoding/decoding layer. I have tried by increasing one layer, but this seems to increase my training time significantly (AWS is not cooperating sometimes), sometimes by 10 times. 
 3. It may also be good to explore other techniques explained in the lecture such as dropout and pooling. 
 4. It would be good to be able to try out much bigger epochs, i.e. 50 - 100 and see whether overall the data becomes overfitted or there might be a sweet spot. However the training time is too long for this cases.
-5. Fix up the simulator to be able to run the follow me project with the model trained.
+5. For the same hyperparameters, running it multiple times can result in different final score. This might be due to the sample evaluation data that has a bias, or the training data that were chosen somehow tallies well with the sample evaluation data. It would be good to explore this corelation between sample evaluation data and training data
 
 ## Scenarios
 
