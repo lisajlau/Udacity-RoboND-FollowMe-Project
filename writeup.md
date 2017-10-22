@@ -15,6 +15,8 @@ Notebook: [Jupyter notebook](./model_training.html)
 	validation_steps = 50
 	workers = 2
 
+	Score = 0.4352
+
 Notebook2: [Jupyter notebook](./model_training2.html)
 	learning_rate = 0.005
 	batch_size = 50
@@ -22,6 +24,8 @@ Notebook2: [Jupyter notebook](./model_training2.html)
 	steps_per_epoch = 100
 	validation_steps = 50
 	workers = 2
+
+	Score = 0.4732
 	
 
 ## Network Architecture
