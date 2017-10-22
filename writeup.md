@@ -29,6 +29,13 @@ The model structure used is a 5 layer fully convolutional network model. It has 
 
 ![model](./images/FCN_model.png)
 
+### Updates
+===============
+
+The same architecture can be used for different objects, i.e. animals, vehicles etc. That's the power of deep learning, training and learning, the network would extract out the features based on the data that it has been trained on. As the model has been trained for the hero specifically, it would need to be retrained to be able to pick up different objects. Some objects may require a more complex structure, but it would be on a per basis, there is probably no one size fits all.
+
+=================
+
 #### Encoder
 Separable convolution is used for the encoders. Separable convolutions is a technique that reduces the number of parameters needed, thus increasing efficiency for the encoder network. It requires less parameters, making it more efficient and reducing runtime performance.
 In the encoding layers, features of images are extracted, where the simple patterns are found initially and gets refined to understanding complex structure (shapes, person, animal) as it traverse deeper into each layer. 
